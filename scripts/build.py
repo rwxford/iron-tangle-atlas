@@ -43,7 +43,7 @@ def build() -> None:
         encoding='utf-8',
     )
     release = {'appVersion': VERSION, 'datasetVersion': data['meta']['version'],
-               'commit': os.environ.get('COMMIT_REF', 'local-development'),
+               'commit': os.environ.get('COMMIT_REF') or os.environ.get('ATLAS_COMMIT_REF') or 'local-development',
                'checks': {'structuralTests': 13, 'readerLogicTests': 25},
                'verification': 'Partial secondary reconstruction; not strictly spoiler-safe'}
     (out / 'release.json').write_text(json.dumps(release, indent=2) + '\n', encoding='utf-8')
