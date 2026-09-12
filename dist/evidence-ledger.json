@@ -1,0 +1,1393 @@
+{
+  "status": "incomplete-audit",
+  "datasetVersion": "0.2.0-alpha",
+  "claims": [
+    {
+      "recordId": "red-81",
+      "recordType": "nodes",
+      "evidenceTier": "primary-excerpt",
+      "sourceIds": [
+        "official"
+      ],
+      "indexedChapter": 1,
+      "firstRevealed": {
+        "chapter": 1,
+        "scene": "opening excerpt"
+      },
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "red-yellow-83",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 2,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "red-84",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 2,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yellow-84",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yellow-88",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yellow-indigo-89",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yellow-116",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yellow-131",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 7,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "mauve-purple-283",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "nightmare-436",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "green-yellow-283",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "tangerine-plum-83",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "ochre-149",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "dismemberment"
+      ],
+      "indexedChapter": 10,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "mauve-281",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "dismemberment"
+      ],
+      "indexedChapter": 13,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "orange-indigo-83",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 3,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "azure-brown-199",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 4,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "camel-cobalt-271",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "camel-272",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "camel-275",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "vermillion-36",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 24,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "vermillion-60",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 21,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "vermillion-72",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "vermillion-75",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "vermillion-101",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 21,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "zomp-59",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 29,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "mindaro-abyss",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 28,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-E",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "homeward-E-24",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "homeward-E-60",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 18,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "station",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-A",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-B",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 18,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-C",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 26,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-D",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 19,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-F",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 27,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-H",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 21,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-M",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 28,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "yard-Q",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 27,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "yard",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "unplaced-41",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 19,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "unplaced",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "unplaced-36",
+      "recordType": "nodes",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 31,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "unplaced",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "red-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 2,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "red-2",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 2,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "y-0",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "y-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "y-2",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "y-3",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 5,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "y-4",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 7,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "y-5",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "mauve-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "dl-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "dismemberment"
+      ],
+      "indexedChapter": 13,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "ne-0",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "ordered",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "ne-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "ordered",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "ne-2",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "ordered",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "ne-3",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "ordered",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "ne-4",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "ordered",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "v-0",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 24,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "v-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "v-2",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "v-3",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "c-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "c-2",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "sequence",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "h-1",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "h-2",
+      "recordType": "edges",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 18,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "journey",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-1-1",
+      "recordType": "events",
+      "evidenceTier": "primary-excerpt",
+      "sourceIds": [
+        "official"
+      ],
+      "indexedChapter": 1,
+      "firstRevealed": {
+        "chapter": 1,
+        "scene": "opening excerpt"
+      },
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-1-1",
+      "recordType": "events",
+      "evidenceTier": "primary-excerpt",
+      "sourceIds": [
+        "official"
+      ],
+      "indexedChapter": 1,
+      "firstRevealed": {
+        "chapter": 1,
+        "scene": "opening excerpt"
+      },
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-2-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 2,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-2-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 2,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "brynhild's-daughters-3-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 3,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "bautista-4-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "index"
+      ],
+      "indexedChapter": 4,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-6-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 6,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-7-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 7,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-10-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 10,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-11-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 11,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-13-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 13,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-13-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 13,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-14-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-14-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "nightmare"
+      ],
+      "indexedChapter": 14,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-15-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-15-2",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 15,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-16-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 16,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-17-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-17-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-17-2",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 17,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-18-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 18,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-19-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 19,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "meadow-lark-19-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 19,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-20-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 20,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-21-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 21,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "li-jun's-group-21-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 21,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-22-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-22-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-22-2",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 22,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-23-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 23,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-24-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "rescue"
+      ],
+      "indexedChapter": 24,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-25-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 25,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-25-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 25,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-26-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 26,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-27-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 27,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "bautista-28-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "yards"
+      ],
+      "indexedChapter": 28,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-28-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 28,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-29-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 29,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "donut--katia-29-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 29,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-30-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 30,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-31-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 31,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-32-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 32,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-33-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 33,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    },
+    {
+      "recordId": "carl-34-1",
+      "recordType": "events",
+      "evidenceTier": "secondary-or-inferred",
+      "sourceIds": [
+        "chapters"
+      ],
+      "indexedChapter": 34,
+      "firstRevealed": null,
+      "eventTimeVerified": false,
+      "relationshipType": "reported-checkpoint",
+      "geometryIsEditorial": true
+    }
+  ]
+}

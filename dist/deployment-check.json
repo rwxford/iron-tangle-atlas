@@ -1,0 +1,5 @@
+{
+  "application": "Iron Tangle Atlas",
+  "deployment_check": "github-netlify-20260912-01",
+  "purpose": "Nonvisual verification of GitHub-to-Netlify publishing. No map data or interface changes."
+}

@@ -1,0 +1,6 @@
+[build]
+  command = "python3 scripts/build.py"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

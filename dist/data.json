@@ -1,0 +1,2160 @@
+{
+  "meta": {
+    "title": "Iron Tangle Atlas",
+    "version": "0.2.0-alpha",
+    "schema": 1,
+    "date": "2026-09-12",
+    "scope": "Book 3 only; selected fan-indexed network fragments",
+    "publicationStatus": "Prototype - primary-text verification pending"
+  },
+  "sources": {
+    "official": {
+      "title": "Matt Dinniman: official Book 3 audio-preview transcript",
+      "url": "https://mattdinniman.com/books/the-dungeon-anarchists-cookbook/",
+      "tier": "primary",
+      "locator": "Opening scene: Red Line, car 20, approaching Sirin (81)."
+    },
+    "index": {
+      "title": "DCCDatabase: Untangling the Iron Tangle",
+      "url": "https://www.dccdatabase.com/wiki/untangling_the_iron_tangle/",
+      "tier": "secondary",
+      "locator": "Station table and book-chapter footnotes; fan reconstruction."
+    },
+    "floor": {
+      "title": "DCCDatabase: Fourth Floor",
+      "url": "https://www.dccdatabase.com/wiki/fourth_floor/",
+      "tier": "secondary",
+      "locator": "Colored-line roster, named services, general rules."
+    },
+    "nightmare": {
+      "title": "DCCDatabase: Nightmare Express",
+      "url": "https://www.dccdatabase.com/wiki/nightmare_express/",
+      "tier": "secondary",
+      "locator": "Route section; cites Book 3 chapter 14."
+    },
+    "dismemberment": {
+      "title": "DCCDatabase: Dismemberment Limited",
+      "url": "https://www.dccdatabase.com/wiki/dismemberment_limited/",
+      "tier": "secondary",
+      "locator": "Route and journey; cites Book 3 chapters 12-13."
+    },
+    "yards": {
+      "title": "DCCDatabase: Train yard",
+      "url": "https://www.dccdatabase.com/wiki/train_yard/",
+      "tier": "secondary",
+      "locator": "Yard list; individual chapter references 15-28."
+    },
+    "rescue": {
+      "title": "DCCDatabase: Vermillion Line Rescue",
+      "url": "https://www.dccdatabase.com/wiki/vermillion_line_rescue/",
+      "tier": "secondary",
+      "locator": "Journey and reversal; cites chapters 21-24."
+    },
+    "chapters": {
+      "title": "DCCDatabase: Book 3 chapter index",
+      "url": "https://www.dccdatabase.com/wiki/dungeon_anarchist's_cookbook_(book)/",
+      "tier": "secondary",
+      "locator": "Selected chapter-level checkpoints, not a scene transcript."
+    }
+  },
+  "routes": [
+    {
+      "id": "red",
+      "name": "Red",
+      "color": "#CF303D",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "color": "#DE681F",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "color": "#C39B00",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "indigo",
+      "name": "Indigo",
+      "color": "#514296",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "azure",
+      "name": "Azure",
+      "color": "#008FB5",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "purple",
+      "name": "Purple",
+      "color": "#8846B0",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "brown",
+      "name": "Brown",
+      "color": "#815B45",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "mauve",
+      "name": "Mauve",
+      "color": "#BA79B5",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "color": "#248754",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "tangerine",
+      "name": "Tangerine",
+      "color": "#EA8600",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "plum",
+      "name": "Plum",
+      "color": "#79446F",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "winter-sky",
+      "name": "Winter Sky",
+      "color": "#CB417B",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "ochre",
+      "name": "Ochre",
+      "color": "#B57921",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "fulvous",
+      "name": "Fulvous",
+      "color": "#D48700",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "camel",
+      "name": "Camel",
+      "color": "#AE8050",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "cobalt",
+      "name": "Cobalt",
+      "color": "#0759A6",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "puce",
+      "name": "Puce",
+      "color": "#A76C7D",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "vermillion",
+      "name": "Vermillion",
+      "color": "#DA472E",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "mango",
+      "name": "Mango",
+      "color": "#E9A230",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "sinopia",
+      "name": "Sinopia",
+      "color": "#AD471C",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "mindaro",
+      "name": "Mindaro",
+      "color": "#A2AF42",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "grullo",
+      "name": "Grullo",
+      "color": "#958A7C",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "zomp",
+      "name": "Zomp",
+      "color": "#308E7A",
+      "kind": "color",
+      "sources": [
+        "floor"
+      ],
+      "note": "Display color is illustrative, not a canonical RGB value. Unlisted stops and yard affiliations are not inferred."
+    },
+    {
+      "id": "nightmare",
+      "name": "Nightmare Express",
+      "color": "#1C303B",
+      "kind": "named",
+      "sources": [
+        "nightmare",
+        "floor"
+      ],
+      "chapter": 4,
+      "note": "Five-stop circuit, described as a figure eight. About 90 minutes per circuit; per-leg timing is not encoded."
+    },
+    {
+      "id": "dismemberment",
+      "name": "Dismemberment Limited",
+      "color": "#96375F",
+      "kind": "named",
+      "sources": [
+        "dismemberment"
+      ],
+      "chapter": 12,
+      "note": "Two indexed points on a 48-minute loop; not asserted to be its only stops."
+    },
+    {
+      "id": "eviscerator",
+      "name": "The Eviscerator",
+      "color": "#58687B",
+      "kind": "named",
+      "sources": [
+        "index",
+        "floor"
+      ],
+      "chapter": 15,
+      "note": "Station 271 only. Remaining route is unlocated."
+    },
+    {
+      "id": "homeward",
+      "name": "Homeward Bound",
+      "color": "#927218",
+      "kind": "special",
+      "sources": [
+        "yards",
+        "chapters"
+      ],
+      "chapter": 17,
+      "note": "Selected points in the Yard E journey context. Other variants are not merged into this fragment."
+    },
+    {
+      "id": "escape",
+      "name": "Escape Velocity",
+      "color": "#46729F",
+      "kind": "special",
+      "sources": [
+        "chapters",
+        "index"
+      ],
+      "chapter": 18,
+      "note": "Service reference only. Exact variants and their ordered stops need primary-text verification."
+    },
+    {
+      "id": "diesel",
+      "name": "Unnamed diesel train",
+      "color": "#85929A",
+      "kind": "unlocated",
+      "sources": [
+        "floor"
+      ],
+      "chapter": null,
+      "note": "Named-line train type, but no established route name or station assignment in this dataset."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "red-81",
+      "number": 81,
+      "routes": [
+        "red"
+      ],
+      "x": 165,
+      "y": 110,
+      "chapter": 1,
+      "name": "Sirin",
+      "sources": [
+        "official"
+      ],
+      "tier": "primary",
+      "kind": "station",
+      "note": "The opening party is approaching this stop, not standing on its platform.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Official opening excerpt."
+    },
+    {
+      "id": "red-yellow-83",
+      "number": 83,
+      "routes": [
+        "red",
+        "yellow",
+        "nightmare"
+      ],
+      "x": 165,
+      "y": 255,
+      "chapter": 2,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {
+        "nightmare": "83(a)"
+      },
+      "routeChapters": {
+        "nightmare": 4
+      },
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "red-84",
+      "number": 84,
+      "routes": [
+        "red"
+      ],
+      "x": 165,
+      "y": 405,
+      "chapter": 2,
+      "name": "Rusalka",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yellow-84",
+      "number": 84,
+      "routes": [
+        "yellow"
+      ],
+      "x": 330,
+      "y": 110,
+      "chapter": 5,
+      "name": "Phantom Kangaroo",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yellow-88",
+      "number": 88,
+      "routes": [
+        "yellow"
+      ],
+      "x": 515,
+      "y": 110,
+      "chapter": 5,
+      "name": "Mothman",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yellow-indigo-89",
+      "number": 89,
+      "routes": [
+        "yellow",
+        "indigo"
+      ],
+      "x": 690,
+      "y": 110,
+      "chapter": 5,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yellow-116",
+      "number": 116,
+      "routes": [
+        "yellow"
+      ],
+      "x": 865,
+      "y": 110,
+      "chapter": 5,
+      "name": "Banshee",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yellow-131",
+      "number": 131,
+      "routes": [
+        "yellow"
+      ],
+      "x": 1050,
+      "y": 110,
+      "chapter": 7,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Arby's is a saferoom establishment here, not a replacement station name.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "mauve-purple-283",
+      "number": 283,
+      "routes": [
+        "mauve",
+        "purple",
+        "nightmare"
+      ],
+      "x": 500,
+      "y": 255,
+      "chapter": 14,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {
+        "nightmare": "283(a)"
+      },
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "nightmare-436",
+      "number": 436,
+      "routes": [
+        "nightmare"
+      ],
+      "x": 1120,
+      "y": 580,
+      "chapter": 14,
+      "name": "Abyss",
+      "sources": [
+        "nightmare"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Named-service platform context, not a universal physical interchange for every station 436.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "green-yellow-283",
+      "number": 283,
+      "routes": [
+        "green",
+        "yellow",
+        "nightmare"
+      ],
+      "x": 1120,
+      "y": 255,
+      "chapter": 14,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {
+        "nightmare": "283(b)"
+      },
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "tangerine-plum-83",
+      "number": 83,
+      "routes": [
+        "tangerine",
+        "plum",
+        "nightmare"
+      ],
+      "x": 500,
+      "y": 580,
+      "chapter": 14,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Fan table has Plumb; normalized to Plum in its color roster.",
+      "aliases": {
+        "nightmare": "83(b)"
+      },
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "ochre-149",
+      "number": 149,
+      "routes": [
+        "ochre",
+        "dismemberment"
+      ],
+      "x": 300,
+      "y": 470,
+      "chapter": 10,
+      "name": "",
+      "sources": [
+        "dismemberment"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {
+        "dismemberment": 12
+      },
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "mauve-281",
+      "number": 281,
+      "routes": [
+        "mauve",
+        "dismemberment"
+      ],
+      "x": 500,
+      "y": 470,
+      "chapter": 13,
+      "name": "",
+      "sources": [
+        "dismemberment"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "orange-indigo-83",
+      "number": 83,
+      "routes": [
+        "orange",
+        "indigo"
+      ],
+      "x": 185,
+      "y": 835,
+      "chapter": 3,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Not either Nightmare Express station 83.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "azure-brown-199",
+      "number": 199,
+      "routes": [
+        "azure",
+        "brown"
+      ],
+      "x": 490,
+      "y": 835,
+      "chapter": 4,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "camel-cobalt-271",
+      "number": 271,
+      "routes": [
+        "camel",
+        "cobalt",
+        "eviscerator"
+      ],
+      "x": 185,
+      "y": 1040,
+      "chapter": 15,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "camel-272",
+      "number": 272,
+      "routes": [
+        "camel"
+      ],
+      "x": 410,
+      "y": 1040,
+      "chapter": 15,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "camel-275",
+      "number": 275,
+      "routes": [
+        "camel"
+      ],
+      "x": 635,
+      "y": 1040,
+      "chapter": 15,
+      "name": "",
+      "sources": [
+        "index"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "vermillion-36",
+      "number": 36,
+      "routes": [
+        "vermillion"
+      ],
+      "x": 740,
+      "y": 835,
+      "chapter": 24,
+      "name": "",
+      "sources": [
+        "rescue"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Return destination in the rescue account. Later platform identity is not assumed.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "vermillion-60",
+      "number": 60,
+      "routes": [
+        "vermillion"
+      ],
+      "x": 910,
+      "y": 835,
+      "chapter": 21,
+      "name": "",
+      "sources": [
+        "rescue"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Not automatically merged with other station 60 records.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "vermillion-72",
+      "number": 72,
+      "routes": [
+        "vermillion"
+      ],
+      "x": 1080,
+      "y": 835,
+      "chapter": 22,
+      "name": "",
+      "sources": [
+        "rescue"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "vermillion-75",
+      "number": 75,
+      "routes": [
+        "vermillion"
+      ],
+      "x": 1250,
+      "y": 835,
+      "chapter": 22,
+      "name": "",
+      "sources": [
+        "rescue"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "vermillion-101",
+      "number": 101,
+      "routes": [
+        "vermillion"
+      ],
+      "x": 1420,
+      "y": 835,
+      "chapter": 21,
+      "name": "",
+      "sources": [
+        "rescue"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "zomp-59",
+      "number": 59,
+      "routes": [
+        "zomp"
+      ],
+      "x": 840,
+      "y": 1040,
+      "chapter": 29,
+      "name": "",
+      "sources": [
+        "chapters"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "mindaro-abyss",
+      "number": 436,
+      "routes": [
+        "mindaro"
+      ],
+      "x": 1410,
+      "y": 580,
+      "chapter": 28,
+      "name": "Abyss approach",
+      "sources": [
+        "chapters"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Index associates the chapter with an Abyss approach. Exact platform identity requires book verification; no transfer is drawn.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-E",
+      "number": 10,
+      "routes": [
+        "homeward"
+      ],
+      "x": 1040,
+      "y": 1040,
+      "chapter": 17,
+      "name": "Trainyard E",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Repair hub E. Multiple colored-line affiliations remain unmapped.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "homeward-E-24",
+      "number": 24,
+      "routes": [
+        "homeward"
+      ],
+      "x": 1230,
+      "y": 1040,
+      "chapter": 17,
+      "name": "",
+      "sources": [
+        "chapters"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "homeward-E-60",
+      "number": 60,
+      "routes": [
+        "homeward"
+      ],
+      "x": 1420,
+      "y": 1040,
+      "chapter": 18,
+      "name": "",
+      "sources": [
+        "chapters"
+      ],
+      "tier": "secondary",
+      "kind": "station",
+      "note": "Employee-route context; no platform transfer to Vermillion 60 is asserted.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-A",
+      "number": 10,
+      "routes": [],
+      "x": 155,
+      "y": 1255,
+      "chapter": 17,
+      "name": "Trainyard A",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "reported-yard",
+      "note": "Reported-only / not treated as a confirmed navigable yard.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-B",
+      "number": 10,
+      "routes": [],
+      "x": 335,
+      "y": 1255,
+      "chapter": 18,
+      "name": "Trainyard B",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-C",
+      "number": 10,
+      "routes": [],
+      "x": 515,
+      "y": 1255,
+      "chapter": 26,
+      "name": "Trainyard C",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-D",
+      "number": 10,
+      "routes": [],
+      "x": 695,
+      "y": 1255,
+      "chapter": 19,
+      "name": "Trainyard D",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-F",
+      "number": 10,
+      "routes": [],
+      "x": 875,
+      "y": 1255,
+      "chapter": 27,
+      "name": "Trainyard F",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-H",
+      "number": 10,
+      "routes": [],
+      "x": 1055,
+      "y": 1255,
+      "chapter": 21,
+      "name": "Trainyard H",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-M",
+      "number": 10,
+      "routes": [],
+      "x": 1235,
+      "y": 1255,
+      "chapter": 28,
+      "name": "Trainyard M",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "yard-Q",
+      "number": 10,
+      "routes": [],
+      "x": 1415,
+      "y": 1255,
+      "chapter": 27,
+      "name": "Trainyard Q",
+      "sources": [
+        "yards"
+      ],
+      "tier": "secondary",
+      "kind": "yard",
+      "note": "Named yard; its colored-line affiliations are not established here.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "unplaced-41",
+      "number": 41,
+      "routes": [],
+      "x": null,
+      "y": null,
+      "chapter": 19,
+      "name": "",
+      "sources": [
+        "chapters"
+      ],
+      "tier": "secondary",
+      "kind": "unplaced",
+      "note": "Number reported; line and physical identity not resolved.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    },
+    {
+      "id": "unplaced-36",
+      "number": 36,
+      "routes": [],
+      "x": null,
+      "y": null,
+      "chapter": 31,
+      "name": "",
+      "sources": [
+        "chapters"
+      ],
+      "tier": "secondary",
+      "kind": "unplaced",
+      "note": "Late-book checkpoint. Not merged with Vermillion 36 from a terse chapter heading alone.",
+      "aliases": {},
+      "routeChapters": {},
+      "layer": "Unresolved",
+      "chapterNote": "Indexed chapter, not verified first-reveal position."
+    }
+  ],
+  "edges": [
+    {
+      "id": "red-1",
+      "from": "red-81",
+      "to": "red-yellow-83",
+      "route": "red",
+      "chapter": 2,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "red-2",
+      "from": "red-yellow-83",
+      "to": "red-84",
+      "route": "red",
+      "chapter": 2,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "y-0",
+      "from": "red-yellow-83",
+      "to": "yellow-84",
+      "route": "yellow",
+      "chapter": 5,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": [
+        [
+          165,
+          190
+        ],
+        [
+          245,
+          110
+        ]
+      ]
+    },
+    {
+      "id": "y-1",
+      "from": "yellow-84",
+      "to": "yellow-88",
+      "route": "yellow",
+      "chapter": 5,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "y-2",
+      "from": "yellow-88",
+      "to": "yellow-indigo-89",
+      "route": "yellow",
+      "chapter": 5,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "y-3",
+      "from": "yellow-indigo-89",
+      "to": "yellow-116",
+      "route": "yellow",
+      "chapter": 5,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "y-4",
+      "from": "yellow-116",
+      "to": "yellow-131",
+      "route": "yellow",
+      "chapter": 7,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "y-5",
+      "from": "yellow-131",
+      "to": "green-yellow-283",
+      "route": "yellow",
+      "chapter": 14,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": [
+        [
+          1120,
+          110
+        ]
+      ]
+    },
+    {
+      "id": "mauve-1",
+      "from": "mauve-281",
+      "to": "mauve-purple-283",
+      "route": "mauve",
+      "chapter": 14,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "dl-1",
+      "from": "ochre-149",
+      "to": "mauve-281",
+      "route": "dismemberment",
+      "chapter": 13,
+      "kind": "journey",
+      "sources": [
+        "dismemberment"
+      ],
+      "via": []
+    },
+    {
+      "id": "ne-0",
+      "from": "red-yellow-83",
+      "to": "mauve-purple-283",
+      "route": "nightmare",
+      "chapter": 14,
+      "kind": "ordered",
+      "sources": [
+        "nightmare"
+      ],
+      "via": []
+    },
+    {
+      "id": "ne-1",
+      "from": "mauve-purple-283",
+      "to": "nightmare-436",
+      "route": "nightmare",
+      "chapter": 14,
+      "kind": "ordered",
+      "sources": [
+        "nightmare"
+      ],
+      "via": [
+        [
+          825,
+          580
+        ]
+      ]
+    },
+    {
+      "id": "ne-2",
+      "from": "nightmare-436",
+      "to": "green-yellow-283",
+      "route": "nightmare",
+      "chapter": 14,
+      "kind": "ordered",
+      "sources": [
+        "nightmare"
+      ],
+      "via": [
+        [
+          1250,
+          580
+        ],
+        [
+          1300,
+          530
+        ],
+        [
+          1300,
+          305
+        ],
+        [
+          1250,
+          255
+        ]
+      ]
+    },
+    {
+      "id": "ne-3",
+      "from": "green-yellow-283",
+      "to": "tangerine-plum-83",
+      "route": "nightmare",
+      "chapter": 14,
+      "kind": "ordered",
+      "sources": [
+        "nightmare"
+      ],
+      "via": [
+        [
+          825,
+          255
+        ]
+      ]
+    },
+    {
+      "id": "ne-4",
+      "from": "tangerine-plum-83",
+      "to": "red-yellow-83",
+      "route": "nightmare",
+      "chapter": 14,
+      "kind": "ordered",
+      "sources": [
+        "nightmare"
+      ],
+      "via": [
+        [
+          165,
+          580
+        ],
+        [
+          80,
+          495
+        ],
+        [
+          80,
+          340
+        ]
+      ]
+    },
+    {
+      "id": "v-0",
+      "from": "vermillion-36",
+      "to": "vermillion-60",
+      "route": "vermillion",
+      "chapter": 24,
+      "kind": "journey",
+      "sources": [
+        "rescue"
+      ],
+      "via": []
+    },
+    {
+      "id": "v-1",
+      "from": "vermillion-60",
+      "to": "vermillion-72",
+      "route": "vermillion",
+      "chapter": 22,
+      "kind": "journey",
+      "sources": [
+        "rescue"
+      ],
+      "via": []
+    },
+    {
+      "id": "v-2",
+      "from": "vermillion-72",
+      "to": "vermillion-75",
+      "route": "vermillion",
+      "chapter": 22,
+      "kind": "journey",
+      "sources": [
+        "rescue"
+      ],
+      "via": []
+    },
+    {
+      "id": "v-3",
+      "from": "vermillion-75",
+      "to": "vermillion-101",
+      "route": "vermillion",
+      "chapter": 22,
+      "kind": "journey",
+      "sources": [
+        "rescue"
+      ],
+      "via": []
+    },
+    {
+      "id": "c-1",
+      "from": "camel-cobalt-271",
+      "to": "camel-272",
+      "route": "camel",
+      "chapter": 15,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "c-2",
+      "from": "camel-272",
+      "to": "camel-275",
+      "route": "camel",
+      "chapter": 15,
+      "kind": "sequence",
+      "sources": [
+        "index"
+      ],
+      "via": []
+    },
+    {
+      "id": "h-1",
+      "from": "yard-E",
+      "to": "homeward-E-24",
+      "route": "homeward",
+      "chapter": 17,
+      "kind": "journey",
+      "sources": [
+        "chapters"
+      ],
+      "via": []
+    },
+    {
+      "id": "h-2",
+      "from": "homeward-E-24",
+      "to": "homeward-E-60",
+      "route": "homeward",
+      "chapter": 18,
+      "kind": "journey",
+      "sources": [
+        "chapters"
+      ],
+      "via": []
+    }
+  ],
+  "relations": [
+    {
+      "from": "nightmare-436",
+      "to": "yard-E",
+      "kind": "repair-portal",
+      "chapter": 17,
+      "sources": [
+        "yards"
+      ],
+      "note": "Station Repair switch / portal association. Access constraints are not simulated."
+    }
+  ],
+  "events": [
+    {
+      "id": "carl-1-1",
+      "chapter": 1,
+      "order": 1,
+      "group": "Carl",
+      "location": null,
+      "travel": {
+        "to": "red-81",
+        "route": "red"
+      },
+      "sources": [
+        "official"
+      ],
+      "vehicle": null,
+      "remark": "Approaching the stop; not on its platform."
+    },
+    {
+      "id": "donut--katia-1-1",
+      "chapter": 1,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": null,
+      "travel": {
+        "to": "red-81",
+        "route": "red"
+      },
+      "sources": [
+        "official"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-2-1",
+      "chapter": 2,
+      "order": 1,
+      "group": "Carl",
+      "location": "red-yellow-83",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "donut--katia-2-1",
+      "chapter": 2,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "red-yellow-83",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "brynhild's-daughters-3-1",
+      "chapter": 3,
+      "order": 1,
+      "group": "Brynhild's Daughters",
+      "location": "orange-indigo-83",
+      "travel": null,
+      "sources": [
+        "index"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "bautista-4-1",
+      "chapter": 4,
+      "order": 1,
+      "group": "Bautista",
+      "location": "azure-brown-199",
+      "travel": null,
+      "sources": [
+        "index"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-6-1",
+      "chapter": 6,
+      "order": 1,
+      "group": "Carl",
+      "location": "yellow-116",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-7-1",
+      "chapter": 7,
+      "order": 1,
+      "group": "Carl",
+      "location": "yellow-131",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-10-1",
+      "chapter": 10,
+      "order": 1,
+      "group": "Carl",
+      "location": "ochre-149",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-11-1",
+      "chapter": 11,
+      "order": 1,
+      "group": "Carl",
+      "location": "ochre-149",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-13-1",
+      "chapter": 13,
+      "order": 1,
+      "group": "Carl",
+      "location": "mauve-281",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "donut--katia-13-1",
+      "chapter": 13,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "mauve-281",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "carl-14-1",
+      "chapter": 14,
+      "order": 1,
+      "group": "Carl",
+      "location": null,
+      "travel": {
+        "from": "mauve-purple-283",
+        "to": "nightmare-436",
+        "route": "nightmare"
+      },
+      "sources": [
+        "nightmare"
+      ],
+      "vehicle": "Nightmare Express",
+      "remark": "Departure checkpoint; exact position within the leg is unknown."
+    },
+    {
+      "id": "donut--katia-14-1",
+      "chapter": 14,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "mauve-purple-283",
+      "travel": null,
+      "sources": [
+        "nightmare"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "carl-15-1",
+      "chapter": 15,
+      "order": 1,
+      "group": "Carl",
+      "location": "nightmare-436",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-15-2",
+      "chapter": 15,
+      "order": 2,
+      "group": "Carl",
+      "location": "mauve-purple-283",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-16-1",
+      "chapter": 16,
+      "order": 1,
+      "group": "Carl",
+      "location": "nightmare-436",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-17-1",
+      "chapter": 17,
+      "order": 1,
+      "group": "Carl",
+      "location": "yard-E",
+      "travel": null,
+      "sources": [
+        "yards"
+      ],
+      "vehicle": "Nightmare Express",
+      "remark": ""
+    },
+    {
+      "id": "donut--katia-17-1",
+      "chapter": 17,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "yard-E",
+      "travel": null,
+      "sources": [
+        "yards"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "carl-17-2",
+      "chapter": 17,
+      "order": 2,
+      "group": "Carl",
+      "location": "homeward-E-24",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": "Nightmare Express",
+      "remark": ""
+    },
+    {
+      "id": "carl-18-1",
+      "chapter": 18,
+      "order": 1,
+      "group": "Carl",
+      "location": "homeward-E-60",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": "Nightmare Express",
+      "remark": ""
+    },
+    {
+      "id": "carl-19-1",
+      "chapter": 19,
+      "order": 1,
+      "group": "Carl",
+      "location": "unplaced-41",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "meadow-lark-19-1",
+      "chapter": 19,
+      "order": 1,
+      "group": "Meadow Lark",
+      "location": "yard-D",
+      "travel": null,
+      "sources": [
+        "yards"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-20-1",
+      "chapter": 20,
+      "order": 1,
+      "group": "Carl",
+      "location": null,
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Off-network appearance; no rail position indexed."
+    },
+    {
+      "id": "carl-21-1",
+      "chapter": 21,
+      "order": 1,
+      "group": "Carl",
+      "location": "vermillion-60",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "li-jun's-group-21-1",
+      "chapter": 21,
+      "order": 1,
+      "group": "Li Jun's group",
+      "location": "vermillion-101",
+      "travel": null,
+      "sources": [
+        "rescue"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-22-1",
+      "chapter": 22,
+      "order": 1,
+      "group": "Carl",
+      "location": "vermillion-72",
+      "travel": null,
+      "sources": [
+        "rescue"
+      ],
+      "vehicle": null,
+      "remark": "Passing, not a confirmed passenger stop."
+    },
+    {
+      "id": "donut--katia-22-1",
+      "chapter": 22,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "vermillion-101",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "carl-22-2",
+      "chapter": 22,
+      "order": 2,
+      "group": "Carl",
+      "location": "vermillion-101",
+      "travel": null,
+      "sources": [
+        "rescue"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-23-1",
+      "chapter": 23,
+      "order": 1,
+      "group": "Carl",
+      "location": "vermillion-101",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-24-1",
+      "chapter": 24,
+      "order": 1,
+      "group": "Carl",
+      "location": null,
+      "travel": {
+        "from": "vermillion-101",
+        "to": "vermillion-75",
+        "route": "vermillion"
+      },
+      "sources": [
+        "rescue"
+      ],
+      "vehicle": null,
+      "remark": "Reversing. Exact point in the interval is unknown."
+    },
+    {
+      "id": "carl-25-1",
+      "chapter": 25,
+      "order": 1,
+      "group": "Carl",
+      "location": "vermillion-75",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "donut--katia-25-1",
+      "chapter": 25,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "vermillion-75",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "carl-26-1",
+      "chapter": 26,
+      "order": 1,
+      "group": "Carl",
+      "location": "vermillion-75",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-27-1",
+      "chapter": 27,
+      "order": 1,
+      "group": "Carl",
+      "location": "vermillion-75",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "bautista-28-1",
+      "chapter": 28,
+      "order": 1,
+      "group": "Bautista",
+      "location": "yard-H",
+      "travel": null,
+      "sources": [
+        "yards"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-28-1",
+      "chapter": 28,
+      "order": 1,
+      "group": "Carl",
+      "location": "mindaro-abyss",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-29-1",
+      "chapter": 29,
+      "order": 1,
+      "group": "Carl",
+      "location": "zomp-59",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "donut--katia-29-1",
+      "chapter": 29,
+      "order": 1,
+      "group": "Donut / Katia",
+      "location": "zomp-59",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Selected co-location report, not a claim of continuous travel together."
+    },
+    {
+      "id": "carl-30-1",
+      "chapter": 30,
+      "order": 1,
+      "group": "Carl",
+      "location": "zomp-59",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-31-1",
+      "chapter": 31,
+      "order": 1,
+      "group": "Carl",
+      "location": "unplaced-36",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-32-1",
+      "chapter": 32,
+      "order": 1,
+      "group": "Carl",
+      "location": "yard-E",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-33-1",
+      "chapter": 33,
+      "order": 1,
+      "group": "Carl",
+      "location": "yard-E",
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": ""
+    },
+    {
+      "id": "carl-34-1",
+      "chapter": 34,
+      "order": 1,
+      "group": "Carl",
+      "location": null,
+      "travel": null,
+      "sources": [
+        "chapters"
+      ],
+      "vehicle": null,
+      "remark": "Stairwell departure; exact platform not indexed."
+    }
+  ],
+  "issues": [
+    {
+      "title": "Primary-text audit incomplete",
+      "text": "Only Red 81 and the opening train scene are checked against an authorized excerpt. The remaining records are fan-indexed, even when a chapter is attached."
+    },
+    {
+      "title": "Katia drawing descriptions still to be checked",
+      "text": "Those passages should govern the reconstruction. They have not been retrieved in primary text here; this prototype does not claim to reproduce her drawing. A fan-described figure-eight is used only for the Nightmare circuit."
+    },
+    {
+      "title": "Duplicate labels are editorial",
+      "text": "83(a)/83(b) and 283(a)/283(b) identify distinct Nightmare Express stops in its published source order. The letters are ours, not book terminology. Aliases are fixed identifiers, not recalculated when a map is filtered."
+    },
+    {
+      "title": "Matching numbers do not establish a transfer",
+      "text": "Line context, physical identity, platform and layer must agree. Yard memberships, shared platform identities and layer orientation remain incomplete."
+    },
+    {
+      "title": "Not a continuous position tracker",
+      "text": "A checkpoint is a reported location within a chapter, not necessarily its end. Unreported movement is unknown. No speed, timetable or continuous animation is fabricated."
+    },
+    {
+      "title": "Not an operational route planner",
+      "text": "Collisions, closures, reversals and permissions are not comprehensively modeled. Arrows show a reference or reported journey direction, not a guarantee a train currently runs that way."
+    },
+    {
+      "title": "Source conflicts quarantined",
+      "text": "Mora 82 has inconsistent line columns in the fan index. Station 317 introduces additional color names not reconciled with its roster. Raven Blade Unlimited remains unsubstantiated in the inspected sources. These are not plotted as established facts."
+    },
+    {
+      "title": "Chapter filtering remains provisional",
+      "text": "Fan chapter references are not verified first-reveal offsets. A shared view has a spoiler gate, but the data is not yet guaranteed spoiler-safe. No audiobook timestamps are provided."
+    },
+    {
+      "title": "Original generated map is discarded",
+      "text": "The invented central hub, station names and districts from the artwork are not source evidence and are not included."
+    }
+  ]
+}

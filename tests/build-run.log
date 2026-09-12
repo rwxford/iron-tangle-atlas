@@ -1,0 +1,196 @@
+{
+  "errors": [],
+  "warnings": [
+    "Structural validation does not establish book accuracy or spoiler safety.",
+    "11 inferred sequence edges are not verified directions.",
+    "Primary-text verification remains incomplete."
+  ],
+  "counts": {
+    "routes": 29,
+    "nodes": 39,
+    "edges": 23,
+    "events": 44,
+    "relations": 1,
+    "inferred_sequences": 11,
+    "primary_nodes": 1
+  }
+}
+test_alias_collision (test_validate_data.ValidatorTests.test_alias_collision) ... ok
+test_bad_collection_shape (test_validate_data.ValidatorTests.test_bad_collection_shape) ... ok
+test_baseline_and_embedded_parity (test_validate_data.ValidatorTests.test_baseline_and_embedded_parity) ... ok
+test_duplicate_id (test_validate_data.ValidatorTests.test_duplicate_id) ... ok
+test_embedded_data_drift (test_validate_data.ValidatorTests.test_embedded_data_drift) ... ok
+test_half_missing_coordinate (test_validate_data.ValidatorTests.test_half_missing_coordinate) ... ok
+test_invalid_chapter (test_validate_data.ValidatorTests.test_invalid_chapter) ... ok
+test_location_and_travel_conflict (test_validate_data.ValidatorTests.test_location_and_travel_conflict) ... ok
+test_missing_edge_endpoint (test_validate_data.ValidatorTests.test_missing_edge_endpoint) ... ok
+test_missing_embedded_data (test_validate_data.ValidatorTests.test_missing_embedded_data) ... ok
+test_missing_source (test_validate_data.ValidatorTests.test_missing_source) ... ok
+test_primary_without_primary_source (test_validate_data.ValidatorTests.test_primary_without_primary_source) ... ok
+test_published_alias_contract (test_validate_data.ValidatorTests.test_published_alias_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.019s
+
+OK
+TAP version 13
+# Subtest: opening starts in reading mode with only the primary station
+ok 1 - opening starts in reading mode with only the primary station
+  ---
+  duration_ms: 2.950761
+  type: 'test'
+  ...
+# Subtest: beginning chapter excludes same-chapter secondary locations
+ok 2 - beginning chapter excludes same-chapter secondary locations
+  ---
+  duration_ms: 1.212616
+  type: 'test'
+  ...
+# Subtest: finished chapter includes indexed locations without claiming verification
+ok 3 - finished chapter includes indexed locations without claiming verification
+  ---
+  duration_ms: 1.510651
+  type: 'test'
+  ...
+# Subtest: future group names are absent from reading choices
+ok 4 - future group names are absent from reading choices
+  ---
+  duration_ms: 1.406778
+  type: 'test'
+  ...
+# Subtest: inferred connections are hidden by default
+ok 5 - inferred connections are hidden by default
+  ---
+  duration_ms: 0.559181
+  type: 'test'
+  ...
+# Subtest: explicit guide layer exposes eleven unverified sequences
+ok 6 - explicit guide layer exposes eleven unverified sequences
+  ---
+  duration_ms: 0.453864
+  type: 'test'
+  ...
+# Subtest: reset clears exploration but preserves reader state and unrelated properties
+ok 7 - reset clears exploration but preserves reader state and unrelated properties
+  ---
+  duration_ms: 0.305648
+  type: 'test'
+  ...
+# Subtest: 83(b) has one stable physical identity
+ok 8 - 83(b) has one stable physical identity
+  ---
+  duration_ms: 1.583767
+  type: 'test'
+  ...
+# Subtest: 283 suffixes stay distinct
+ok 9 - 283 suffixes stay distinct
+  ---
+  duration_ms: 0.787315
+  type: 'test'
+  ...
+# Subtest: number-only search returns distinct records, not substring matches
+ok 10 - number-only search returns distinct records, not substring matches
+  ---
+  duration_ms: 0.598133
+  type: 'test'
+  ...
+# Subtest: line plus station number searches globally
+ok 11 - line plus station number searches globally
+  ---
+  duration_ms: 3.733147
+  type: 'test'
+  ...
+# Subtest: yard query works without selecting a tab
+ok 12 - yard query works without selecting a tab
+  ---
+  duration_ms: 0.538032
+  type: 'test'
+  ...
+# Subtest: mendaro matches canonical Mindaro without changing data
+ok 13 - mendaro matches canonical Mindaro without changing data
+  ---
+  duration_ms: 3.582277
+  type: 'test'
+  ...
+# Subtest: fulvis matches Fulvous
+ok 14 - fulvis matches Fulvous
+  ---
+  duration_ms: 0.914241
+  type: 'test'
+  ...
+# Subtest: future aliases and names do not appear in opening search
+ok 15 - future aliases and names do not appear in opening search
+  ---
+  duration_ms: 0.497626
+  type: 'test'
+  ...
+# Subtest: empty query searches all current types
+ok 16 - empty query searches all current types
+  ---
+  duration_ms: 0.98923
+  type: 'test'
+  ...
+# Subtest: new shared links round-trip state
+ok 17 - new shared links round-trip state
+  ---
+  duration_ms: 0.596711
+  type: 'test'
+  ...
+# Subtest: legacy 0.2 links preserve through-chapter and aliases
+ok 18 - legacy 0.2 links preserve through-chapter and aliases
+  ---
+  duration_ms: 0.404623
+  type: 'test'
+  ...
+# Subtest: unknown IDs and future selections are discarded
+ok 19 - unknown IDs and future selections are discarded
+  ---
+  duration_ms: 0.176959
+  type: 'test'
+  ...
+# Subtest: notes never enter a shared link
+ok 20 - notes never enter a shared link
+  ---
+  duration_ms: 0.181288
+  type: 'test'
+  ...
+# Subtest: checkpoint is chosen from permitted reports only
+ok 21 - checkpoint is chosen from permitted reports only
+  ---
+  duration_ms: 0.56434
+  type: 'test'
+  ...
+# Subtest: reported reverse movement preserves its direction
+ok 22 - reported reverse movement preserves its direction
+  ---
+  duration_ms: 0.366833
+  type: 'test'
+  ...
+# Subtest: chapter values are bounded and unknown phases are conservative
+ok 23 - chapter values are bounded and unknown phases are conservative
+  ---
+  duration_ms: 0.301571
+  type: 'test'
+  ...
+# Subtest: new served UI has no duplicate dataset and no inline script
+ok 24 - new served UI has no duplicate dataset and no inline script
+  ---
+  duration_ms: 0.281413
+  type: 'test'
+  ...
+# Subtest: route renderer never creates arrows on general edges
+ok 25 - route renderer never creates arrows on general edges
+  ---
+  duration_ms: 0.216433
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 106.825987
+Staged reader 0.3.0 in /mnt/data/atlas_release/dist; 106 audit records; no primary-text promotion.

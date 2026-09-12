@@ -1,0 +1,154 @@
+/* Browser UI. Book facts remain in data.json; layout is editorial, not geography. */
+(async function () {
+  'use strict';
+  const C=window.AtlasCore, $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const read=(k,f={})=>{try{return JSON.parse(localStorage.getItem(k))||f;}catch(_){return f;}};
+  let D;
+  try{const r=await fetch('data.json',{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);D=await r.json();}
+  catch(error){$('reportHeading').textContent='The dataset could not be loaded.';$('reportSub').textContent='Check your connection and reload this page.';$('counts').textContent='No map data loaded';return;}
+  const legacy=read('iron-tangle-atlas-v2'), saved=read('iron-tangle-reader-v3');
+  let notes=legacy.notes && typeof legacy.notes==='object'?legacy.notes:{};
+  let s=C.clean(D,{...saved,chapter:saved.chapter||legacy.chapter||1,phase:saved.phase||(legacy.chapter?'finished':'beginning'),mode:'reading',group:saved.group||legacy.group||'Carl'});
+  let view={x:0,y:0,w:1550,h:1370},undoState=null,timer=null,modalCancel=null,release=null,dragged=false;
+  const m=()=>C.model(D,s), plotted=n=>n&&Number.isFinite(n.x)&&Number.isFinite(n.y);
+  const set=(patch,history=true)=>{s=C.clean(D,{...s,...patch});render();if(history)sync('push');};
+  function storage(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(_){toast('Browser storage unavailable; changes last only for this visit.');return false;}}
+  function persist(){storage('iron-tangle-reader-v3',{chapter:s.chapter,phase:s.phase,group:s.group,event:s.event});}
+  function sync(how='replace'){const url=location.pathname+location.search+C.hash(s);try{history[how==='push'?'pushState':'replaceState']({atlas:true},'',url);}catch(_){}persist();}
+  function toast(text,undo=false){clearTimeout(timer);$('toast').querySelector('span').textContent=text;$('undo').hidden=!undo;$('toast').hidden=false;timer=setTimeout(()=>$('toast').hidden=true,7000);}
+  function closeModal(){if($('dialog').open)$('dialog').close();modalCancel=null;}
+  function modal(title,body,cancel=null){closeModal();$('dialogTitle').textContent=title;$('dialogBody').innerHTML=body;modalCancel=cancel;$('dialog').showModal();}
+  function ask(title,text,action){modal(title,`<p>${esc(text)}</p><div class="buttons"><button class="primary" id="accept">Continue</button><button id="decline">Cancel</button></div>`,()=>sync());$('accept').onclick=()=>{closeModal();action();};$('decline').onclick=()=>{closeModal();sync();};}
+  function applyView(){$('map').setAttribute('viewBox',`${view.x} ${view.y} ${view.w} ${view.h}`);}
+  function fit(ns=m().nodes){
+    ns=ns.filter(plotted);if(!ns.length){view={x:0,y:0,w:1550,h:1370};applyView();return;}
+    const ids=new Set(ns.map(n=>n.id));const points=ns.map(n=>[n.x,n.y]);
+    for(const e of m().edges)if(ids.has(e.from)&&ids.has(e.to))points.push(...e.via);
+    const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),box=$('map').getBoundingClientRect();
+    const w=Math.max(460,Math.max(...xs)-Math.min(...xs)+210),h=Math.max(300,Math.max(...ys)-Math.min(...ys)+160);
+    const availableW=Math.max(150,box.width-60),availableH=Math.max(150,box.height-190),scale=Math.max(w/availableW,h/availableH);
+    view={x:(Math.min(...xs)+Math.max(...xs)-box.width*scale)/2,y:(Math.min(...ys)+Math.max(...ys))/2-(50+availableH/2)*scale,w:box.width*scale,h:box.height*scale};applyView();
+  }
+
+  function zoom(f){const w=Math.max(220,Math.min(7000,view.w*f)),h=view.h*w/view.w;view={x:view.x+(view.w-w)/2,y:view.y+(view.h-h)/2,w,h};applyView();}
+  function recenter(){const ns=m().reportNodes(m().report).filter(plotted);if(ns.length)fit(ns);else toast('This report has no established map position.');}
+  function reset(){undoState={s:{...s},view:{...view}};closeModal();s=C.reset(s);document.body.classList.remove('panel-large');render();fit();sync('push');toast('View reset. Reading position and notes preserved.',true);}
+  function inspectNode(id){const n=m().nodes.find(n=>n.id===id);if(!n)return;set({node:id,route:s.route&&C.memberships(n,s).includes(s.route)?s.route:null,panel:'detail'});requestAnimationFrame(()=>fit([n]));}
+  function inspectRoute(id){if(!m().routes.some(r=>r.id===id))return;set({route:id,node:null,panel:'detail'});requestAnimationFrame(()=>{const ns=m().nodes.filter(n=>C.memberships(n,s).includes(id));if(ns.length)fit(ns);});}
+  function inspectEvent(id){const e=m().events.find(e=>e.id===id);if(!e)return;set({group:e.group,event:e.id,node:null,route:null,panel:'detail'});requestAnimationFrame(recenter);}
+  function openPanel(panel){s.panel=panel;render();}
+  function sourceDetails(ids){const sources=[...new Set(ids)].map(id=>D.sources[id]).filter(Boolean);return `<details><summary>Evidence and source links</summary><p class="small">External pages may contain later-book spoilers. Secondary sources have not been checked against the full novel.</p>${sources.map(x=>`<a class="source" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a><span class="small">${x.tier==='primary'?'Authorized primary excerpt':'Secondary fan index'}</span>`).join('')}</details>`;}
+  function chip(primary){return `<span class="chip ${primary?'primary-evidence':''}">${primary?'Primary excerpt checked':'Fan-indexed / unverified'}</span>`;}
+  function routesHTML(n){return C.memberships(n,s).map(id=>`<button class="route-chip" data-route="${esc(id)}"><i style="background:${m().R.get(id).color}"></i>${esc(m().routeName(id))}</button>`).join('');}
+  function stopButton(n,route){return `<button data-node="${esc(n.id)}">${esc(m().label(n,route))} <span class="small">${esc(m().context(n))}</span></button>`;}
+  function nodeDetails(n){const M=m();let h=`<span class="eyebrow">${n.kind.includes('yard')?'TRAINYARD / DISTINCT PHYSICAL RECORD':'STATION / DISTINCT PHYSICAL RECORD'}</span><h2>${esc(M.label(n))}</h2>${chip(C.primary(n))}<span class="chip">Indexed chapter ${n.chapter}</span><div>${routesHTML(n)}</div>`;
+    if(Object.keys(n.aliases).length && (s.mode==='reference'||C.cutoff(s)>=14))h+=`<p class="small">${esc(Object.values(n.aliases).join(', '))}: stable map labels, not book terminology. Matching numbers elsewhere do not create a transfer.</p>`;
+    if(n.note&&(C.primary(n)||s.mode==='reference'))h+=`<p class="sub">${esc(n.note)}</p>`;
+    if(!plotted(n))h+='<div class="info">Physical location is unresolved. No map position is invented.</div>';
+    const connections=M.edges.filter(e=>e.kind!=='sequence'&&(e.from===n.id||e.to===n.id)&&(!s.route||e.route===s.route));
+    h+='<h3>Documented relationships</h3>';
+    if(!connections.length)h+='<p class="sub">Onward route not established in this view. Number order is not evidence of an adjacent stop or a train direction.</p>';
+    for(const e of connections){const target=M.N.get(e.from===n.id?e.to:e.from);h+=`<div class="info"><strong>${esc(M.routeName(e.route))}</strong><p>${esc(C.connectionText(e.kind))}. Indexed chapter ${e.chapter}.</p>${stopButton(target,e.route)}</div>`;}
+    const rels=D.relations.filter(r=>r.from===n.id&&C.known(r,s)&&C.known(M.N.get(r.to),s));
+    for(const r of rels)h+=`<div class="info">Special-access association, not a rail transfer.${stopButton(M.N.get(r.to))}</div>`;
+    h+=sourceDetails(n.sources)+`<details><summary>Private reading note</summary><label class="field"><span>Stored only in this browser</span><textarea id="note" placeholder="Your observation or audio timestamp...">${esc(notes[n.id]||'')}</textarea></label><p class="small">Excluded from links, exports and corrections.</p></details><button class="full" data-correct="${esc(n.id)}">Suggest a correction</button>`;
+    return h;
+  }
+  function routeDetails(r){const M=m(),ns=M.nodes.filter(n=>C.memberships(n,s).includes(r.id));let h=`<span class="eyebrow">LINE / PARTIAL SERVICE RECORD</span><h2>${esc(r.name)}</h2>${chip(false)}<p class="sub">${ns.length} indexed points. Unknown connections remain unmapped.</p>`;
+    if(s.mode==='reference')h+=`<p class="sub">${esc(r.note)}</p>`;
+    if(r.id==='nightmare'&&(s.mode==='reference'||C.cutoff(s)>=14)){
+      const ids=['red-yellow-83','mauve-purple-283','nightmare-436','green-yellow-283','tangerine-plum-83','red-yellow-83'];
+      h+='<h3>Source-listed circuit order</h3><p class="small">Fan index, chapter 14. Order is not an operational direction or live prediction.</p><ol class="stop-strip">'+ids.filter(id=>ns.some(n=>n.id===id)).map(id=>`<li>${stopButton(M.N.get(id),r.id)}</li>`).join('')+'</ol>';
+    }else{h+='<h3>Indexed points, not an itinerary</h3>'+(ns.length?ns.sort((a,b)=>a.number-b.number).map(n=>stopButton(n,r.id)).join(''):'<p class="sub">No station locations have been established for this service. A decorative route is not drawn.</p>');}
+    return h+sourceDetails(r.sources);
+  }
+  function journeyDetails(){const M=m(),e=M.report;let h=`<span class="eyebrow">READING CHECKPOINT / NOT LIVE TRACKING</span><h2>${esc(s.group)}</h2>`;
+    if(!e)return h+'<p class="sub">No recorded position at this reading point.</p>';
+    h+=chip(C.primary(e))+`<span class="chip">Chapter ${e.chapter}, report ${e.order}</span><h3>${esc(M.reportText(e))}</h3>`;
+    const service=e.travel?.route?M.routeName(e.travel.route):e.vehicle||'Not established for this report';
+    h+=`<p class="sub"><strong>Service / vehicle:</strong> ${esc(service)}</p>`;
+    if(e.remark)h+=`<p class="sub">${esc(e.remark)}</p>`;
+    h+='<div class="info">Last reported does not mean still there. Exact position between reports is unknown. A checkpoint does not provide within-chapter spoiler protection.</div>';
+    if(e.travel)h+=`<h3>Reported destination</h3><p>${esc(C.known(M.N.get(e.travel.to),s)?M.title(M.N.get(e.travel.to)):'Unavailable at this reading point')}</p><p class="small">A reported destination is not necessarily the next passenger stop.</p>`;
+    const es=M.groupEvents(),i=es.findIndex(r=>r.id===e.id),next=es[i+1];
+    h+='<h3>Next recorded point in this reading view</h3>'+(next?`<p class="sub">Chapter ${next.chapter}: ${esc(M.reportText(next))}. This is the next indexed report, not a guaranteed next stop.</p>`:'<p class="sub">Not established within the current reading limit.</p>');
+    h+='<div class="buttons"><button id="previousReport" '+(i<=0?'disabled':'')+'>Previous report</button><button id="nextReport" '+(!next?'disabled':'')+'>Next report</button></div>';
+    h+=M.reportNodes(e).map(n=>stopButton(n)).join('')+sourceDetails(e.sources);return h;
+  }
+  function renderResults(){const {results,corrected,normalized}=C.search(D,s),kinds=['stations','lines','yards','reports'];
+    let h=`<div class="filters" aria-label="Optional search filters">${['all',...kinds].map(k=>`<button data-filter="${k}" aria-pressed="${s.filter===k}" class="${s.filter===k?'active':''}">${k==='all'?'All':k[0].toUpperCase()+k.slice(1)}</button>`).join('')}</div>`;
+    if(corrected)h+=`<p class="small">Also matching the spelling: <strong>${esc(normalized)}</strong></p>`;
+    h+=`<p class="small" role="status">${results.length} matches in the current reading view</p>`;
+    for(const kind of kinds){const rows=results.filter(r=>r.kind===kind);if(!rows.length)continue;h+=`<h3>${kind[0].toUpperCase()+kind.slice(1)}</h3>`+rows.map(r=>`<button class="result" data-${kind==='lines'?'route':kind==='reports'?'event':'node'}="${esc(r.id)}">${r.color?`<span class="line-dot" style="background:${r.color}"></span>`:`<span class="badge">${esc(r.badge)}</span>`}<span><strong>${esc(r.heading)}</strong><small>${esc(r.sub)}</small></span></button>`).join('');}
+    if(!results.length)h+='<p class="sub">No match in this reading view. That does not establish whether the location exists. Try another spelling or clear the optional filter.</p>';
+    $('panelContent').innerHTML='<div id="results">'+h+'</div>';
+  }
+  function renderPanel(){const open=!!s.panel;$('panel').hidden=!open;document.body.classList.toggle('panel-open',open);$('search').setAttribute('aria-expanded',String(s.panel==='search'));$('explore').setAttribute('aria-expanded',String(open));
+    if(!open)return;
+    if(s.panel==='search'){$('panelTitle').textContent='Explore the atlas';renderResults();return;}
+    $('panelTitle').textContent=s.node?'Location':s.route?'Line / service':'Crawler report';
+    const M=m();$('panelContent').innerHTML=s.node?nodeDetails(M.N.get(s.node)):s.route?routeDetails(M.R.get(s.route)):journeyDetails();
+    if($('note'))$('note').oninput=e=>{notes[s.node]=e.target.value;storage('iron-tangle-atlas-v2',{...legacy,notes});};
+  }
+  function path(points){return points.map((p,i)=>(i?'L ':'M ')+p.join(' ')).join(' ');}
+  function renderMap(){const M=m();let h='<defs><marker id="travelArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8 Z" fill="#6b3d85"/></marker></defs>';
+    for(const e of M.edges){const a=M.N.get(e.from),b=M.N.get(e.to);if(!plotted(a)||!plotted(b))continue;const points=[[a.x,a.y],...e.via,[b.x,b.y]],color=M.R.get(e.route).color,dim=s.route&&s.route!==e.route;h+=`<g opacity="${dim?.14:1}"><path d="${path(points)}" fill="none" stroke="white" stroke-width="14" stroke-linejoin="round"/><path data-edge="${esc(e.id)}" data-kind="${e.kind}" d="${path(points)}" fill="none" stroke="${color}" stroke-width="7" stroke-linejoin="round" ${e.kind==='sequence'?'stroke-dasharray="3 10"':''}><title>${esc(C.connectionText(e.kind))}</title></path></g>`;}
+    for(const n of M.nodes.filter(plotted)){const dim=s.route&&!C.memberships(n,s).includes(s.route),num=n.kind.includes('yard')?n.name.split(' ').at(-1):C.number(n,s),caption=n.kind.includes('yard')?'Trainyard '+num:n.name||(C.memberships(n,s).filter(id=>M.R.get(id).kind==='color').map(M.routeName).join(' / ')||M.context(n));let parts=caption.length>26?caption.split(' / '):[caption];if(parts.length>2)parts=[parts[0]+' / '+parts[1],parts.slice(2).join(' / ')];
+      h+=`<g class="map-node" tabindex="0" role="button" data-node="${esc(n.id)}" aria-label="${esc(M.title(n))}" opacity="${dim?.2:1}"><title>${esc(M.title(n))}</title>${s.node===n.id?`<circle cx="${n.x}" cy="${n.y}" r="25" fill="#f2e7f8" stroke="#6b3d85" stroke-width="3"/>`:''}<circle cx="${n.x}" cy="${n.y}" r="12" fill="white" stroke="${C.primary(n)?'#2f7150':'#243c4a'}" stroke-width="${C.memberships(n,s).length>1?4:3}" ${n.kind==='reported-yard'?'stroke-dasharray="4 3"':''}/><text x="${n.x}" y="${n.y-25}" class="number">${esc(num)}</text><text x="${n.x}" y="${n.y+35}" class="map-label">${parts.map((t,i)=>`<tspan x="${n.x}" dy="${i?21:0}">${esc(t)}</tspan>`).join('')}</text></g>`;
+    }
+    const e=M.report;
+    if(e?.location && C.known(M.N.get(e.location),s) && plotted(M.N.get(e.location))){const n=M.N.get(e.location);h+=`<circle cx="${n.x}" cy="${n.y}" r="6" fill="#6b3d85" pointer-events="none"><title>Last indexed report, chapter ${e.chapter}</title></circle>`;}
+    if(e?.travel?.from){const from=M.N.get(e.travel.from),to=M.N.get(e.travel.to),edge=M.edges.find(x=>x.kind!=='sequence'&&x.route===e.travel.route&&((x.from===e.travel.from&&x.to===e.travel.to)||(x.to===e.travel.from&&x.from===e.travel.to)));
+      if(edge&&plotted(from)&&plotted(to)){let points=[[M.N.get(edge.from).x,M.N.get(edge.from).y],...edge.via,[M.N.get(edge.to).x,M.N.get(edge.to).y]];if(edge.from!==e.travel.from)points=points.reverse();h+=`<path data-travel="${esc(e.id)}" d="${path(points)}" fill="none" stroke="#6b3d85" stroke-width="4" stroke-dasharray="4 8" marker-end="url(#travelArrow)"><title>Reported movement in chapter ${e.chapter}; exact position unknown</title></path>`;}
+    }
+    $('map').innerHTML=h;applyView();$('counts').textContent=`${M.nodes.filter(plotted).length} plotted / ${M.nodes.length} indexed in this view`;
+    $('legend').textContent=s.inferred?'Dotted: number order only, connection unverified. Purple arrow: selected report only.':'Solid: source-described fragment, not a timetable. Crossings are not transfers.';
+    $('reportHeading').textContent=e?s.group+' / '+M.reportText(e):'No recorded position at this reading point';$('reportSub').textContent=e?`Indexed chapter ${e.chapter}. Subsequent position is unknown.`:'Choose a reading point to explore.';
+    $('recenter').disabled=!M.reportNodes(e).some(plotted);
+  }
+  function render(){const point=`Ch ${s.chapter} / ${s.phase==='beginning'?'beginning':'finished'}`;$('progress').textContent=s.mode==='reference'?'Reference / all chapters':point;$('mapContext').textContent=s.mode==='reference'?'Reference map / includes later-book information':`Map knowledge: ${s.phase==='beginning'?(s.chapter===1?'opening excerpt':'before chapter '+s.chapter):'through chapter '+s.chapter}`;
+    $('notice').classList.toggle('reference',s.mode==='reference');$('notice').textContent=s.mode==='reference'?'Reference mode reveals the full starter dataset. Most entries remain unverified against the novel.':'Research alpha: most locations are fan-indexed. Chapter filtering is approximate, not guaranteed spoiler protection.';
+    $('search').value=s.query;$('clearSearch').hidden=!s.query;renderPanel();renderMap();persist();
+  }
+  function readingDialog(){const M=m();modal('Your reading or listening position',`<p class="sub">Choose <strong>Beginning</strong> to exclude records indexed to this chapter. The opening excerpt remains visible. Chapter references are provisional.</p><form id="readingForm"><label class="field"><span>Book chapter (audio track numbering can differ)</span><input id="chapter" type="number" min="1" max="34" value="${s.chapter}" required></label><label class="field"><span>Progress</span><select id="phase"><option value="beginning" ${s.phase==='beginning'?'selected':''}>Beginning this chapter</option><option value="finished" ${s.phase==='finished'?'selected':''}>Finished this chapter</option></select></label><label class="field"><span>Follow a crawler or group</span><select id="group">${M.groups.map(g=>`<option ${g===s.group?'selected':''}>${esc(g)}</option>`).join('')}</select></label><button class="primary full" type="submit">Apply reading position</button></form><p class="small" style="margin-top:12px">More crawler choices appear only after their indexed chapters. Changing position returns to reading mode.</p>`);$('readingForm').onsubmit=e=>{e.preventDefault();const p={chapter:$('chapter').value,phase:$('phase').value,group:$('group').value,event:'latest',mode:'reading'};closeModal();set({...C.reset(s),...p});fit();};}
+  function layersDialog(){modal('Map layers',`<label class="toggle"><input id="inferred" type="checkbox" ${s.inferred?'checked':''}><span>Number-order guides<small>Off by default. Dotted guides join indexed numbers for orientation only. They are not confirmed connections, adjacent stops or directions.</small></span></label><p class="sub">Only locations allowed by your reading limit are shown. Unlocated lines are searchable but are not drawn.</p><button id="applyLayers" class="primary">Apply layers</button>`);$('applyLayers').onclick=()=>{const value=$('inferred').checked;closeModal();set({inferred:value});};}
+  function share(){const value=location.origin+location.pathname+C.hash(s);modal('Share this view',`<p class="sub">The link includes your chapter, selection, search and selected report. It excludes all private notes. Later-chapter links ask before opening.</p><label class="field"><span>Reader link</span><textarea id="shareText" readonly>${esc(value)}</textarea></label><button id="copy" class="primary">Copy link</button>`);$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(value);toast('Link copied. Notes are not included.');}catch(_){$('shareText').select();toast('Select and copy the link shown.');}};}
+  function correction(id){modal('Suggest a correction',`<p class="sub">Your proposal opens a <strong>public GitHub issue draft</strong>; you review and submit it there. No notes or book text are added automatically.</p><form id="correctionForm"><label class="field"><span>Chapter / audio track and timestamp (optional edition)</span><input id="locator" required placeholder="Chapter 14, 08:30; audiobook edition..."></label><label class="field"><span>Correction in your own words</span><textarea id="proposal" required></textarea></label><p class="small">Do not paste long book passages, credentials, personal information or private notes.</p><button class="primary" type="submit">Prepare public issue draft</button></form>`);$('correctionForm').onsubmit=e=>{e.preventDefault();const body=`Record: ${id||'general'}\nReader app: ${C.VERSION}\nSource locator: ${$('locator').value.trim()}\n\nProposed correction (unverified reader report):\n${$('proposal').value.trim()}`;const url='https://github.com/rwxford/iron-tangle-atlas/issues/new?'+new URLSearchParams({title:'Reader correction: '+(id||'general'),body});modal('Review before submitting',`<p>The proposal is not submitted yet. GitHub issues are public.</p><a class="source" href="${esc(url)}" target="_blank" rel="noopener noreferrer">Open the public issue draft on GitHub</a>`);};}
+  function evidence(){modal('Sources and verification',`<p class="sub">The diagram is a schematic, not the geography of the book. One station is primary-excerpt checked; the remaining starter records are secondary. Full-text and Katia drawing verification is still open.</p><p class="sub">Names, transfers and first-revelation timing have not all been audited. No claim of strict spoiler safety is made.</p>${sourceDetails(Object.keys(D.sources))}<p><a href="https://github.com/rwxford/iron-tangle-atlas/issues/1" target="_blank" rel="noopener noreferrer">Primary-source audit and outstanding work</a></p>`);}
+  function about(){modal('About the atlas',`<p><strong>Reader app ${C.VERSION}</strong><br><span class="sub">Dataset ${esc(D.meta.version)} / ${D.nodes.length} location records</span></p><p class="sub">Unofficial fan project for Matt Dinniman's Book 3. No affiliation or endorsement. No book text, accounts, analytics or live crawler tracking.</p><p class="small">Published revision: ${esc(release?.commit?.slice(0,12)||'available after deployment')}<br>All positions and connections retain their evidence limitations.</p><a class="source" href="https://github.com/rwxford/iron-tangle-atlas" target="_blank" rel="noopener noreferrer">Source code and issue tracker</a>`);}
+  function loadLink(p){if(!p)return;s=C.clean(D,p);render();sync();requestAnimationFrame(()=>{if(s.node)fit([m().N.get(s.node)]);else if(s.route)fit(m().nodes.filter(n=>C.memberships(n,s).includes(s.route)));else fit();});}
+  function gateLink(p){if(!p)return;ask('Open this reading view?',p.mode==='reference'?'This view reveals all chapters in the starter dataset. Continue?':`This link uses chapter ${p.chapter} (${p.phase}). It may reveal later locations. Continue?`,()=>loadLink(p));}
+  function bookmarks(){const list=read('iron-tangle-bookmarks',[]);modal('Saved reading views',`<p class="small">Local to this browser. Bookmarks and notes are never deleted by Reset.</p>${Array.isArray(list)&&list.length?list.map((b,i)=>`<button class="full" data-bookmark="${i}">${esc(b.title)}</button>`).join(''):'<p>No saved views yet.</p>'}`);}
+  function more(){modal('More options',`<div class="menu"><button data-action="share">Share this view</button><button data-action="reading">Reading position and crawler</button><button data-action="saveBookmark">Save reading view</button><button data-action="bookmarks">Saved reading views</button><hr><button data-action="reference">${s.mode==='reference'?'Return to reading mode':'Open full reference map'}</button><button data-action="evidence">Sources and verification</button><button data-action="correction">Suggest a correction</button><button data-action="export">Export the complete dataset</button><button data-action="restart">Start from chapter 1</button><button data-action="about">About / release</button></div>`);}
+  $('progress').onclick=readingDialog;$('more').onclick=more;$('about').onclick=about;$('layers').onclick=layersDialog;$('reset').onclick=reset;
+  $('explore').onclick=()=>{openPanel('search');$('search').focus();};$('search').oninput=e=>{s.query=e.target.value;s.filter='all';s.panel='search';renderPanel();$('clearSearch').hidden=!s.query;sync();};
+  $('clearSearch').onclick=()=>{s.query='';s.filter='all';render();sync();$('search').focus();};
+  $('closePanel').onclick=()=>{s.panel=null;document.body.classList.remove('panel-large');render();$('explore').focus();};
+  $('expandPanel').onclick=()=>{const yes=document.body.classList.toggle('panel-large');$('expandPanel').textContent=yes?'Collapse':'Expand';$('expandPanel').setAttribute('aria-label',yes?'Collapse details panel':'Expand details panel');};
+  $('journeyDetails').onclick=()=>set({node:null,route:null,panel:'detail'});
+  $('zoomIn').onclick=()=>zoom(.78);$('zoomOut').onclick=()=>zoom(1.28);$('recenter').onclick=recenter;
+  $('undo').onclick=()=>{if(!undoState)return;s=undoState.s;view=undoState.view;undoState=null;render();sync('push');toast('Previous view restored.');};
+  $('closeDialog').onclick=()=>{const c=modalCancel;closeModal();if(c)c();};$('dialog').addEventListener('cancel',()=>{const c=modalCancel;modalCancel=null;if(c)c();});
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-node],[data-route],[data-event],[data-filter],[data-action],[data-correct],[data-bookmark],#previousReport,#nextReport');if(!b)return;if(b.closest('svg')&&dragged)return;
+    if(b.dataset.node)inspectNode(b.dataset.node);else if(b.dataset.route)inspectRoute(b.dataset.route);else if(b.dataset.event)inspectEvent(b.dataset.event);else if(b.dataset.filter){set({filter:b.dataset.filter,panel:'search'});}else if(b.dataset.correct)correction(b.dataset.correct);else if(b.dataset.bookmark!==undefined){const x=read('iron-tangle-bookmarks',[])[Number(b.dataset.bookmark)];if(x)gateLink(C.parse(D,x.hash));}
+    else if(b.id==='previousReport'||b.id==='nextReport'){const es=m().groupEvents(),i=es.findIndex(e=>e.id===m().report?.id),next=es[i+(b.id==='nextReport'?1:-1)];if(next)inspectEvent(next.id);}
+    else{const action=b.dataset.action;if(action==='share')share();else if(action==='reading')readingDialog();else if(action==='evidence')evidence();else if(action==='about')about();else if(action==='correction')correction(s.node);else if(action==='bookmarks')bookmarks();else if(action==='saveBookmark'){let list=read('iron-tangle-bookmarks',[]);if(!Array.isArray(list))list=[];list.push({title:`Chapter ${s.chapter} / ${s.phase} / ${s.mode}`,hash:C.hash(s)});storage('iron-tangle-bookmarks',list);closeModal();toast('Reading view saved in this browser.');}
+      else if(action==='reference'){if(s.mode==='reference'){closeModal();set({...C.reset(s),mode:'reading'});fit();}else ask('Open the reference map?','The full starter map reveals later-book locations and names.',()=>{set({...C.reset(s),mode:'reference'});fit();});}
+      else if(action==='restart')ask('Start from chapter 1?','This resets reading progress and exploration. Notes and bookmarks will be kept.',()=>{set(C.defaults());fit();toast('Back to the opening. Notes and bookmarks kept.');});
+      else if(action==='export')ask('Export all map data?','The complete dataset includes later-book information. Your private notes are excluded.',()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(D,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='iron-tangle-data.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);});
+    }
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('dialog').open){if(s.panel){s.panel=null;render();$('search').focus();}return;}if(e.target.id==='search'&&e.key==='ArrowDown'){e.preventDefault();$('panelContent').querySelector('.result')?.focus();}else if(e.target.closest('.result')&&['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();const list=[...$('panelContent').querySelectorAll('.result')],i=list.indexOf(e.target.closest('.result'));list[Math.max(0,Math.min(list.length-1,i+(e.key==='ArrowDown'?1:-1)))]?.focus();}});
+  $('map').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.node){e.preventDefault();inspectNode(e.target.dataset.node);return;}if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','='].includes(e.key)){e.preventDefault();if(e.key==='+'||e.key==='=')zoom(.8);else if(e.key==='-')zoom(1.25);else{view.x+=(e.key==='ArrowLeft'?-1:e.key==='ArrowRight'?1:0)*view.w*.08;view.y+=(e.key==='ArrowUp'?-1:e.key==='ArrowDown'?1:0)*view.h*.08;applyView();}}});
+  const pointers=new Map();let previous=null;const gesture=()=>{const p=[...pointers.values()];return{x:p.reduce((a,b)=>a+b.x,0)/p.length,y:p.reduce((a,b)=>a+b.y,0)/p.length,d:p.length>1?Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y):0};};
+  $('map').onpointerdown=e=>{pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});previous=gesture();dragged=false;if(!e.target.closest('[data-node]'))$('map').setPointerCapture(e.pointerId);};
+  $('map').onpointermove=e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});const g=gesture(),b=$('map').getBoundingClientRect();if(previous){const dx=g.x-previous.x,dy=g.y-previous.y;if(Math.abs(dx)+Math.abs(dy)>2)dragged=true;view.x-=dx*view.w/b.width;view.y-=dy*view.h/b.height;if(g.d&&previous.d){zoom(previous.d/g.d);dragged=true;}applyView();}previous=g;};
+  for(const name of ['pointerup','pointercancel'])$('map').addEventListener(name,e=>{pointers.delete(e.pointerId);previous=pointers.size?gesture():null;});
+  // Wheel scrolling remains page scrolling unless the reader explicitly requests zoom.
+  $('map').addEventListener('wheel',e=>{if(!e.ctrlKey&&!e.metaKey)return;e.preventDefault();zoom(e.deltaY>0?1.1:.9);},{passive:false});
+  window.addEventListener('popstate',()=>{const p=C.parse(D,location.hash);if(!p)return;if(p.mode==='reference'&&s.mode!=='reference'||C.cutoff(p)>C.cutoff(s))gateLink(p);else loadLink(p);});
+  const incoming=C.parse(D,location.hash);render();requestAnimationFrame(()=>{fit();if(incoming){if(incoming.mode==='reference'||incoming.chapter>1)gateLink(incoming);else loadLink(incoming);}else sync();});
+  try{const r=await fetch('release.json',{cache:'no-cache'});if(r.ok)release=await r.json();}catch(_){}
+  window.__atlas={D,C,get state(){return s;},get view(){return view;},set,reset,render,fit,inspectNode,inspectRoute,inspectEvent,hash:()=>C.hash(s),model:m};
+})();
