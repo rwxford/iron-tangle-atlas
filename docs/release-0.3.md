@@ -1,8 +1,8 @@
-# Reader 0.3.0 candidate - implementation notes
+# Reader 0.3.0 - implementation notes
 
 ## Publication status
 
-Prepared and locally tested, not committed or published. GitHub issue #9 records the blocked write. The production site is unchanged by this candidate. Do not close implementation issues as shipped until the normal authorized release workflow succeeds and the production revision is verified.
+Released from the public repository. GitHub issue #9 retains the original handoff and verification history.
 
 ## Issue work
 
@@ -43,4 +43,4 @@ Chromium could not navigate to a server in this environment. DOM checks therefor
 
 ## Release prerequisite
 
-Resume only through the normal authorized workflow after the write block is resolved. Confirm the successful build's actual commit, inspect the published release metadata and perform live-host/mobile checks. Until then, this package is a review candidate and the original GitHub issues remain open.
+Primary-source auditing, strict spoiler verification and broader device/accessibility testing remain open.

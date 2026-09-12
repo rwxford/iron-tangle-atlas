@@ -5,7 +5,7 @@
 <meta name="description" content="An unofficial, evidence-labelled audiobook companion for the Iron Tangle in Dungeon Crawler Carl Book 3.">
 <meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light">
 <title>Iron Tangle Atlas | Book 3 reader companion</title>
-<link rel="stylesheet" href="reader.css?v=0.3.0"><script src="core.js?v=0.3.0" defer></script><script src="reader.js?v=0.3.0" defer></script>
+<link rel="stylesheet" href="reader.css?v=0.4.0"><script src="core.js?v=0.4.0" defer></script><script src="noodle3d.js?v=0.4.0" defer></script><script src="reader.js?v=0.4.0" defer></script>
 </head>
 <body>
 <a class="skip" href="#map">Skip to map</a>
@@ -14,15 +14,16 @@
 <section class="searchbar" aria-label="Find and navigate"><div class="searchwrap"><label for="search" class="sr-only">Search stations, lines, yards and crawler reports</label><span aria-hidden="true" class="searchicon">&#9906;</span><input id="search" type="search" autocomplete="off" placeholder="Search a station, line, yard or crawler" aria-controls="results" aria-expanded="false"><button id="clearSearch" aria-label="Clear search" hidden>&#215;</button></div><button id="explore" aria-controls="panel" aria-expanded="false">Explore</button><button id="reset" class="primary" title="Clear exploration; keep your reading position and notes">Reset view</button></section>
 <main id="workspace">
 <section class="map-shell" aria-label="Network map">
-<div class="map-top"><span id="mapContext">Chapter 1 / opening</span><button id="layers">Layers</button></div>
+<div class="map-top"><span id="mapContext">Chapter 1 / opening</span><div class="map-actions"><button id="mapMode" aria-pressed="false">3D noodles</button><button id="layers">Layers</button></div></div>
 <svg id="map" tabindex="0" role="group" aria-label="Iron Tangle map. Use arrow keys to pan, plus or minus to zoom." viewBox="0 0 1550 1370"></svg>
+<section id="noodleView" hidden aria-label="Interpretive three-dimensional noodle reconstruction"><canvas id="noodleCanvas" tabindex="0" aria-label="Rotatable three-dimensional interpretation of the Iron Tangle noodles. Drag to rotate; pinch or use the controls to zoom."></canvas><div class="noodle-label"><span class="eyebrow">INTERPRETIVE / GEOMETRY UNCONFIRMED</span><strong>Katia-style noodle reconstruction</strong><span>Paired colored lines occupy opposite faces of each double-sided tube.</span></div><div class="noodle-controls" aria-label="Three-dimensional view presets"><button data-camera="top">Top</button><button data-camera="oblique" class="active">Oblique</button><button data-camera="side">Side</button><button data-camera="reset" aria-label="Reset three-dimensional view">Reset</button></div><div class="noodle-key"><span><i style="background:#d7383c"></i><i style="background:#3179c6"></i> Noodle A</span><span><i style="background:#d8ad2f"></i><i style="background:#398b5a"></i> Noodle B</span><span><i style="background:#dd7833"></i><i style="background:#854e9c"></i> Noodle C</span></div></section>
 <div class="map-zoom"><button id="zoomIn" aria-label="Zoom in">+</button><button id="zoomOut" aria-label="Zoom out">&#8722;</button><button id="recenter" aria-label="Recenter on selected crawler report" title="Recenter on selected crawler report">&#9678;</button></div>
 <div class="report-bar"><div><span class="eyebrow">LAST REPORTED / NOT LIVE</span><strong id="reportHeading">Loading the atlas...</strong><span id="reportSub"></span></div><button id="journeyDetails">Details</button></div>
 <div class="legend" id="legend">Solid: source-described fragment. No arrows imply a timetable.</div>
 </section>
 <aside id="panel" hidden aria-label="Explore and details"><div class="panel-head"><h2 id="panelTitle">Explore</h2><div><button id="expandPanel" aria-label="Expand details panel">Expand</button><button id="closePanel" aria-label="Close details panel">&#215;</button></div></div><div id="panelContent"><div id="results"></div></div></aside>
 </main>
-<footer><span id="counts">Loading local dataset...</span><span>Unknown connections stay unknown. <button id="about">v0.3.0 alpha</button></span></footer>
+<footer><span id="counts">Loading local dataset...</span><span>Unknown connections stay unknown. <button id="about">v0.4.0 alpha</button></span></footer>
 <dialog id="dialog" aria-labelledby="dialogTitle"><div class="dialog-head"><h2 id="dialogTitle"></h2><button id="closeDialog" aria-label="Close dialog">&#215;</button></div><div id="dialogBody"></div></dialog>
 <div id="toast" role="status" aria-live="polite" hidden><span></span><button id="undo" hidden>Undo</button></div>
 <noscript>This interactive map needs JavaScript. No account or sign-in is required.</noscript>

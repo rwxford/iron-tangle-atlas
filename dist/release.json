@@ -1,10 +1,10 @@
 {
-  "appVersion": "0.3.0",
+  "appVersion": "0.4.0",
   "datasetVersion": "0.2.0-alpha",
   "commit": "local-development",
   "checks": {
     "structuralTests": 13,
-    "readerLogicTests": 25
+    "readerLogicTests": 27
   },
   "verification": "Partial secondary reconstruction; not strictly spoiler-safe"
 }

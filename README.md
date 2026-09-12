@@ -1,12 +1,10 @@
-# Iron Tangle Atlas - reader 0.3.0 candidate
+# Iron Tangle Atlas
 
-**Status: implemented and locally tested; NOT committed or published.**
+An interactive, map-first reader companion for *The Iron Tangle*. Reader 0.4.0 adds a dependency-free, rotatable 3D interpretation of the double-sided noodles alongside the evidence map. Its logo silhouette and curvature are explicitly labelled unconfirmed rather than presented as canon.
 
-The live Netlify site remains on the preceding release. Two unreferenced GitHub blobs were accepted, but the stylesheet write was blocked by the tool's safety-status check before a release commit was created. This package preserves the work for review. It is not evidence of a successful deployment or a GitHub permission denial.
+Live reader: https://celebrated-malabi-054c1b.netlify.app
 
-Tracked at: https://github.com/rwxford/iron-tangle-atlas/issues/9
-
-## Review the new app
+## Run the app
 
 The new reader's source is in `web/`. Run the dependency-free build from this directory with Python 3.10+ and Node 22:
 
@@ -18,7 +16,7 @@ The build runs structural and reader-logic checks and writes the compiled applic
 
 **The root `index.html` is the legacy 0.2 standalone archive**, kept for existing data-parity tests. It is not the new reader entry point. The build stages `web/reader.html` as `dist/index.html`.
 
-`netlify.toml` describes the intended build and publish configuration. No configuration in this bundle has been committed or activated by this release attempt. Resolve the blocked write through the normal authorized workflow before resuming publication.
+`netlify.toml` runs the validated build and publishes `dist/`.
 
 ## Main changes
 

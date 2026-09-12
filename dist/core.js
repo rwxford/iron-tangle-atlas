@@ -4,7 +4,7 @@
   else root.AtlasCore = factory();
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
-  const VERSION = '0.3.0';
+  const VERSION = '0.4.0';
   const chapter = v => Math.max(1, Math.min(34, Math.floor(Number(v) || 1)));
   const defaults = () => ({chapter:1, phase:'beginning', mode:'reading', group:'Carl', event:'latest', node:null, route:null, query:'', filter:'all', inferred:false, panel:null});
   const cutoff = s => s.mode === 'reference' ? 34 : s.phase === 'beginning' ? s.chapter - 1 : s.chapter;
